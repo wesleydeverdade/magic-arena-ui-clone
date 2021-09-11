@@ -46,5 +46,5 @@ function showCardOnHand(name, src){
     insert = document.createElement( 'div' );
     insert.className="card";
     insert.innerHTML = '<img alt='+name+' src="'+src+'">' 
-    document.getElementById( 'player-hand' ).appendChild(insert);
+    document.getElementById('player-hand').appendChild(insert);
 }

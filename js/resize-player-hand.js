@@ -5,26 +5,16 @@ async function resizeCards(){
     // just in case
     // let center_card = Math.round(hand_player_cards.length/2)-1; 
     
-    // even
-    if(hand_player_cards.length % 2 === 0){
-        for (let index = 0; index < hand_player_cards.length; index++) {
-            let top = (Math.abs(rotate))*4;
-            hand_player_cards[index].style.transform = 'translateY(0px) rotate('+rotate+'deg)';     
-            hand_player_cards[index].style.top = top+'px';            
-            rotate+=3; 
-            // for balacing, both sides of hand with the same size 
-            if(rotate===0) rotate+=3;                   
-        } 
-    // odd    
-    }else{    
-        for (let index = 0; index < hand_player_cards.length; index++) {
-            let top = (Math.abs(rotate))*4;
-            hand_player_cards[index].style.transform = 'translateY(0px) rotate('+rotate+'deg)';     
-            hand_player_cards[index].style.top = top+'px';
-            rotate+=3;   
+    for (let index = 0; index < hand_player_cards.length; index++) {
+        let top = (Math.abs(rotate))*4;
+        hand_player_cards[index].style.transform = 'translateY(0px) rotate('+rotate+'deg)';     
+        hand_player_cards[index].style.top = top+'px';            
+        rotate+=3; 
+        // for balacing even hand, both sides of hand with the same size 
+        if(hand_player_cards.length % 2 === 0){
+            if(rotate===0) rotate+=3;          
         }
     }
-
 }
 
 // create an observer instance
