@@ -1,5 +1,5 @@
 
-function resizeCards(){
+async function resizeCards(){
     let hand_player_cards = document.getElementsByClassName('card')
     let rotate = Math.round(((hand_player_cards.length) + (hand_player_cards.length/2)) * -1) ;
     // just in case
