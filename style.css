@@ -53,6 +53,10 @@ body:after {
     transition: transform .2s;
 }
 
+.card img {
+    width: 170px;
+}
+
 .card:nth-child(1) {
     transform: translateY(0px) rotate(-9deg);
     top: 40px;
