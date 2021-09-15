@@ -1,7 +1,7 @@
 
 #player-hand {
     width: 100%;
-    height: 115px;
+    height: 95px;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -13,10 +13,9 @@
 .card {
     /* width: 15%; mulligan-screen-value */
     width: 11%;   
-    margin-right: -3%;
-    position: relative;
-    top: 30px;
+    position: absolute;
     transition: transform .2s;
+    transform-origin: center 1200px;
 }
 
 .card img {
@@ -27,10 +26,10 @@
 
 /* card hover effect */
 .card:hover {
-    transform: translate(1px , -20px) rotate(0deg) scale(1.35) !important;     
     /*delete top property; mulligan-screen-value */
-    top: -165px !important;
-    z-index: 2 !important;
+    /* transform: rotate(0deg) scale(1.35) !important; */
+    /* top: 220px !important; */
+    z-index: 2 !important; 
 }
  
 #player-stuff {
@@ -40,11 +39,16 @@
     bottom: 0;
     margin: auto 32px;
     height: 120px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
 #player-stuff img {
     width: 85px;
     border-radius: 5.2%;    
-    transform: perspective(600px) 
-        rotateX(10deg) rotate(1deg) rotateY(-10deg);
+}
+
+#player-deck {
+    transform: rotateX(10deg) rotate(1deg) rotateY(-10deg);
+
 }

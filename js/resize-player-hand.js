@@ -1,19 +1,26 @@
 
 async function resizeCards(){
-    let hand_player_cards = document.getElementsByClassName('card')
-    let rotate = Math.round(((hand_player_cards.length) + (hand_player_cards.length/2)) * -1) ;
+    let hand_player_cards = document.getElementsByClassName('card');
+    let rotate = (Math.floor(hand_player_cards.length/2)*5 * -1);
     // just in case
     // let center_card = Math.round(hand_player_cards.length/2)-1; 
     
     for (let index = 0; index < hand_player_cards.length; index++) {
-        let top = (Math.abs(rotate))*4;
-        hand_player_cards[index].style.transform = 'translateY(0px) rotate('+rotate+'deg)';     
-        hand_player_cards[index].style.top = top+'px';            
-        rotate+=3; 
-        // for balacing even hand, both sides of hand with the same size 
-        if(hand_player_cards.length % 2 === 0){
-            if(rotate===0) rotate+=3;          
-        }
+        let img_hover_deg = rotate * -1;
+        hand_player_cards[index].style.transform = `rotate(${rotate}deg)`;
+        
+        hand_player_cards[index].firstElementChild.addEventListener('mouseenter', e => {
+            hand_player_cards[index].firstElementChild.style.transform = `rotate(${img_hover_deg}deg)`;
+            //hand_player_cards[index].firstElementChild.style.position = 'absolute';
+            //hand_player_cards[index].firstElementChild.style.bottom = '0';
+        });     
+        hand_player_cards[index].firstElementChild.addEventListener('mouseleave', e => {
+            hand_player_cards[index].firstElementChild.style.transform = `none`;
+            //hand_player_cards[index].firstElementChild.style.position = 'initial';
+            //hand_player_cards[index].firstElementChild.style.bottom = 'unset';
+        }); 
+
+        rotate+=5;
     }
 }
 
