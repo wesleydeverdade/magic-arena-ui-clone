@@ -12,7 +12,7 @@
 
 .card {
     /* width: 15%; mulligan-screen-value */
-    width: 11%;   
+    width: 170px;
     position: absolute;
     transition: transform .2s;
     transform-origin: center 1200px;
